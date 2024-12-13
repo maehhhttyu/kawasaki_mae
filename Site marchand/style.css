@@ -1,0 +1,357 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: linear-gradient(135deg, #000000, #01fe27); 
+    color: #333;
+}
+
+h1, h3 {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Styles du Menu */
+header {
+    background: linear-gradient(135deg, #000000, #01fe27); 
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header .menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+header .menu li {
+    position: relative; /* Nécessaire pour le positionnement du sous-menu */
+    margin: 0 20px;
+}
+
+header .menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    transition: background-color 0.3s ease-in-out;
+}
+
+header .menu a:hover, header .menu .active {
+    background-color: #ffeb3b; /* Jaune Kawasaki */
+    border-radius: 5px;
+}
+
+/* Menu Déroulant */
+header .menu .dropdown:hover .submenu {
+    display: block;
+}
+
+header .menu .submenu {
+    display: none; /* Cacher le sous-menu par défaut */
+    position: absolute;
+    top: 100%; /* Le sous-menu apparaît juste en dessous du parent */
+    left: 0;
+    background-color: #333; /* Couleur de fond du sous-menu */
+    width: 200px; /* Largeur du sous-menu */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    z-index: 10; /* Assure que le menu déroulant soit au-dessus du contenu */
+}
+
+header .menu .submenu li {
+    text-align: left;
+}
+
+header .menu .submenu li a {
+    color: #fff;
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+header .menu .submenu li a:hover {
+    background-color: #4CAF50; /* Vert Kawasaki au survol */
+}
+
+/* Responsive Design: Menu déroulant sur mobile */
+@media (max-width: 768px) {
+    header .menu {
+        flex-direction: column; /* Empiler les éléments verticalement */
+        align-items: center;
+    }
+
+    header .menu li {
+        margin: 10px 0; /* Espacement entre les éléments du menu */
+    }
+
+    header .menu .submenu {
+        position: static; /* Positionnement normal pour les petits écrans */
+        width: 100%;
+        display: block;
+    }
+}
+
+
+/* Welcome Section avec Dégradé */
+.welcome-section {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #000000, #01fe27); /* Dégradé vert à noir */
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.welcome-section h1 span {
+    color: #ffeb3b;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.welcome-section .catchphrase {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+/* Product Gallery */
+.product-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.product {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.product h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.product p {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+
+.btn {
+    background-color: #ffeb3b;
+    color: #333;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: block;  /* Transforme le bouton en bloc pour qu'il puisse être centré */
+    margin: 0 auto;  /* Centre le bouton horizontalement */
+    text-align: center;  /* Assure que le texte est centré dans le bouton */
+}
+
+.btn:hover {
+    background-color: #333;
+    color: #ffeb3b;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.product:hover {
+    transform: translateY(-10px); /* Effet de survol sur les produits */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Ombre plus prononcée au survol */
+    .btn:hover {
+        background-color: #333;
+        color: #ffeb3b;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+}
+/* Styles de la page de détails de la moto */
+.moto-detail {
+    background-color: linear-gradient(135deg, #000000, #01fe27); 
+    padding: 2rem;
+    color: #333;
+}
+
+.moto-info {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.moto-info h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.moto-detail-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.moto-img {
+    width: 50%;
+}
+
+.moto-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.moto-description {
+    width: 45%;
+    text-align: left;
+}
+
+.moto-description p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.moto-description ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.moto-description ul li {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.moto-description .btn-details {
+    display: inline-block;
+    background-color: #01fe27; /* Vert Kawasaki */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 50px;
+    text-decoration: none;
+    margin-top: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.moto-description .btn-details:hover {
+    background-color: #333;
+    color: #ffeb3b;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .moto-detail-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .moto-img, .moto-description {
+        width: 100%;
+        text-align: center;
+    }
+
+    .moto-description ul {
+        padding-left: 1rem;
+    }
+}
+/* Footer avec Dégradé */
+.footer {
+    background: linear-gradient(135deg, #4CAF50, #1A3D1F); /* Dégradé vert à noir */
+    color: #fff;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;  /* Espacement égal entre les éléments */
+    align-items: flex-start; /* Aligne les éléments en haut du footer */
+    flex-wrap: wrap; /* Permet aux éléments de se réorganiser sur plusieurs lignes si nécessaire */
+}
+
+.footer .footer-container {
+    display: flex;
+    justify-content: space-between;  /* Espacement égal entre les sections */
+    width: 100%;
+    max-width: 1200px;  /* Limite la largeur maximale pour éviter que les sections s'étalent trop */
+}
+
+.footer-section {
+    width: 24%; /* Chaque section prend 24% de la largeur, avec de l'espace entre elles */
+    margin: 0 1rem; /* Espacement entre les sections */
+    padding: 1rem;
+    box-sizing: border-box; /* Pour inclure le padding dans la largeur de la section */
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ffeb3b;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Empile les sections verticalement sur petits écrans */
+        align-items: center;  /* Centre les éléments */
+    }
+
+    .footer-section {
+        width: 100%;  /* Chaque section prend 100% de la largeur sur petits écrans */
+        margin-bottom: 1rem;  /* Ajoute de l'espace entre les sections */
+    }
+}
