@@ -226,7 +226,8 @@ header .menu .submenu li a:hover {
 
 .moto-img img {
     width: 100%;
-    height: auto;
+    height: 300px; /* Forcer une hauteur uniforme pour toutes les images */
+    object-fit: cover; /* Pour que l'image couvre bien l'espace sans déformation */
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -255,12 +256,13 @@ header .menu .submenu li a:hover {
     margin-bottom: 0.5rem;
 }
 
+/* Bouton "Détails" avec taille réduite et aligné à gauche */
 .moto-description .btn-details {
     display: inline-block;
-    background-color: #01fe27; /* Vert Kawasaki */
+    background-color: #01fe27; 
     color: white;
-    padding: 0.75rem 1.5rem;
-    font-size: 1.1rem;
+    padding: 0.5rem 1rem; 
+    font-size: 1rem; 
     font-weight: bold;
     text-transform: uppercase;
     border-radius: 50px;
@@ -268,12 +270,244 @@ header .menu .submenu li a:hover {
     margin-top: 1rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
+    margin-left: 0; /* Aligner à gauche */
+}
+
+/* Changement de style au survol du bouton "Détails" */
+.moto-description .btn-details:hover {
+    background-color: #333;
+    color: #ffeb3b;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+/* Section Moto */
+.moto-detail {
+    background: linear-gradient(135deg, #000000, #01fe27); 
+    padding: 50px;
+    text-align: center;
+}
+
+.moto-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.moto-info .catchphrase {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+.moto-detail-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+.moto-img {
+    width: 50%;
+}
+
+.moto-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.moto-description {
+    width: 40%;
+    text-align: left;
+}
+
+.moto-description p {
+    font-size: 1.1rem;
+    color: #ddd;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.moto-description ul {
+    list-style: none;
+    padding: 0;
+    color: #ddd;
+    margin-bottom: 1.5rem;
+}
+
+.moto-description ul li {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+}
+
+.moto-description .btn-details {
+    display: inline-block;
+    background-color: #01fe27;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
 }
 
 .moto-description .btn-details:hover {
     background-color: #333;
     color: #ffeb3b;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Team Section */
+.team-section {
+    background: #1e1e1e;
+    padding: 40px;
+}
+
+.team-gallery img, .moto-gallery img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.member {
+    text-align: center;
+    width: 200px;
+}
+
+.member img {
+    width: 100%;
+    height: 250px; /* Définir une hauteur fixe pour toutes les images */
+    object-fit: cover; /* Recadre les images si nécessaire pour s'adapter à la taille sans déformation */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.member p {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #ddd;
+}
+
+/* Nos Motos Section */
+.moto-section {
+    background: #121212;
+    padding: 40px;
+    text-align: center;
+}
+
+.moto-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #00b140;
+}
+
+.moto-gallery {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.moto {
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.moto img {
+    width: 100%;
+    height: 250px; /* Définir une hauteur fixe pour toutes les images */
+    object-fit: cover; /* Recadre les images si nécessaire pour s'adapter à la taille sans déformation */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.moto p {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #ddd;
+}
+
+/* Team History Section */
+.team-history {
+    background: #1e1e1e;
+    padding: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.team-history h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #00b140;
+}
+
+.team-history p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .moto-detail-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .moto-img, .moto-description {
+        width: 100%;
+        text-align: center;
+    }
+
+    .moto-description ul {
+        padding-left: 1rem;
+    }
+
+    /* Ajuster les images sur petits écrans */
+    .moto-img img {
+        height: 200px; /* Moins de hauteur sur mobile pour éviter que l'image prenne trop de place */
+    }
+
+    /* Réduire la taille du bouton pour mobile */
+    .moto-description .btn-details {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem; /* Taille réduite du bouton sur mobile */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .moto-detail-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .moto-img, .moto-description {
+        width: 100%;
+        text-align: center;
+    }
+
+    .moto-description ul {
+        padding-left: 1rem;
+    }
+
+    /* Ajuster les images sur petits écrans */
+    .moto-img img {
+        height: 200px; /* Moins de hauteur sur mobile pour éviter que l'image prenne trop de place */
+    }
+
+    /* Réduire la taille du bouton pour mobile */
+    .moto-description .btn-details {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem; /* Taille réduite du bouton sur mobile */
+    }
 }
 
 /* Responsive Design */
