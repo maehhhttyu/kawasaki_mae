@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commande - Kawasaki</title>
+    <link rel="stylesheet" href="../../style.css">
+    <script src="https://www.paypal.com/sdk/js?client-id=AZdkzIIIlLNXLZT00B87mzO-6DRzzwoOp5k5UkRYoLvRnzzJ-auKjvaTWS_EG9ag50p1xLVHmCDNv4mB&currency=EUR"></script>
+</head>
+<body>
+    <header>
+        <ul class="menu">
+            <li><a href="../../index.html" class="active">Accueil</a></li>
+            <li class="dropdown">
+                <a href="../moto.html" class="menu-link">Nos Motos</a>
+                <ul class="submenu">
+                    <li><a href="../moto1.html">Kawasaki de base</a></li>
+                    <li><a href="../moto2.html">Kawasaki moyenne gamme</a></li>
+                    <li><a href="../moto3.html">Kawasaki de luxe</a></li>
+                </ul>
+            </li>
+            <li><a href="../team.html">Team</a></li>
+        </ul>
+    </header>
+    <ul class="commande">
+    <h1>Commander votre moto Kawasaki</h1>
+    <p>Prix : <strong>4 000 €</strong></p>
+    <a href="../detail/moto1-details.html" class="back-button">Retour</a>
+    <div id="paypal-button-container"></div>
+
+    <script>
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+                // Configure le paiement
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '4000.00' // Le prix de l'article
+                        }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                // Capture le paiement après l'approbation
+                return actions.order.capture().then(function(details) {
+                    alert('Merci ' + details.payer.name.given_name + '! Votre commande est confirmée.');
+                });
+            }
+        }).render('#paypal-button-container'); // Rendu du bouton dans la div
+    </script>
+    </ul>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Contactez-nous</h3>
+                <p>Vente de Kawasaki</p>
+                <p>Adresse : Chez moi, 69620 Légny</p>
+                <p>Téléphone : 07 82 05 49 39</p>
+                <p>Email : <a href="mailto:mae.gardette@gmail.com">mae.gardette@gmail.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Liens partenaire</h3>
+                <ul>
+                    <li><a href="https://www.igol.com/">Igol</a></li>
+                    <li><a href="https://www.facebook.com/38vienne/">Ls Bike</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
